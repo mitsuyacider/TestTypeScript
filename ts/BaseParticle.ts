@@ -8,18 +8,13 @@ export default class BaseParticle {
   protected sizeHeight: number;
 
   constructor(_context: CanvasRenderingContext2D) {
-    // this.pos = {
-    //   x: Math.random() * window.screen.width,
-    //   y: Math.random() * window.screen.height,
-    // };
-
+    this.context = _context;
     this.pos = {
-      x: 10,
-      y: 10,
+      x: Math.random() * this.context.canvas.clientWidth,
+      y: Math.random() * this.context.canvas.clientHeight,
     };
 
     this.speed = { x: Math.random() * 2 - 1, y: Math.random() * 2 - 1 };
-    this.context = _context;
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
     const b = Math.floor(Math.random() * 255);
