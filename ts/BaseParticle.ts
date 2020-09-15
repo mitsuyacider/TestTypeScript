@@ -1,5 +1,6 @@
 export default class BaseParticle {
-  protected pos: { x: number; y: number };
+  public pos: { x: number; y: number };
+
   protected speed: { x: number; y: number };
   protected context: CanvasRenderingContext2D;
   protected color: string;

@@ -1,9 +1,11 @@
 import User from "./User";
 import CircleParticle from "./CircleParticle";
-
+import ParticleSystem from "./ParticleSystem";
 const user = new User("Mitsuya", "Watanabe", 44);
 let circle: CircleParticle;
 let ctx: CanvasRenderingContext2D | null;
+let particleSystem: ParticleSystem;
+
 const contentsElem = document.getElementById("contents");
 if (!!contentsElem) {
   contentsElem.innerText = `${user.familyName} ${user.givenName}`;
@@ -25,11 +27,15 @@ const setup = () => {
   canvas.width = canvas.clientWidth;
   canvas.height = canvas.clientHeight;
   circle = new CircleParticle(ctx);
+  particleSystem = new ParticleSystem(ctx);
+  particleSystem.createParticles(100);
 };
 
 const draw = () => {
   ctx?.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
   circle.update();
   circle.draw();
+
+  particleSystem.render();
   window.requestAnimationFrame(draw);
 };
