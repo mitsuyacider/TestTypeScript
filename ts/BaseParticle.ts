@@ -1,13 +1,16 @@
-export default class BaseParticle {
-  public pos: { x: number; y: number };
+import { ParticleName } from "./ParticleName";
 
+export default class BaseParticle implements ParticleName {
+  public pos: { x: number; y: number };
   protected speed: { x: number; y: number };
   protected context: CanvasRenderingContext2D;
   protected color: string;
   protected sizeWidth: number;
   protected sizeHeight: number;
 
-  constructor(_context: CanvasRenderingContext2D) {
+  figure = "";
+
+  constructor(_context: CanvasRenderingContext2D, name = "") {
     this.context = _context;
     this.pos = {
       x: Math.random() * this.context.canvas.clientWidth,

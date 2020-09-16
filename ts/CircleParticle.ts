@@ -1,8 +1,15 @@
 import BaseParticle from "./BaseParticle";
+import { ParticleType, ParticleName } from "./ParticleType";
 
-export default class CircleParticle extends BaseParticle {
+export default class CircleParticle
+  extends BaseParticle
+  implements ParticleType {
+  figure = ParticleName.CIRCLE;
+
   constructor(_context: CanvasRenderingContext2D) {
     super(_context);
+
+    // this.figure = "CIRCLE";
   }
 
   /**
