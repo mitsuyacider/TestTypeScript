@@ -1,14 +1,10 @@
-import { ParticleName } from "./ParticleName";
-
-export default class BaseParticle implements ParticleName {
+export default class BaseParticle {
   public pos: { x: number; y: number };
   protected speed: { x: number; y: number };
   protected context: CanvasRenderingContext2D;
   protected color: string;
   protected sizeWidth: number;
   protected sizeHeight: number;
-
-  figure = "";
 
   constructor(_context: CanvasRenderingContext2D, name = "") {
     this.context = _context;

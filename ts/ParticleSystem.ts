@@ -1,11 +1,12 @@
 import BaseParticle from "./BaseParticle";
+
 import ParticleFactory from "./ParticleFactory";
 
 export default class ParticleSystem {
   private context: CanvasRenderingContext2D;
   private particleNum: number;
   private particles: Array<BaseParticle>;
-  private animationId: string;
+  private animationId: number;
   private particleFactory: ParticleFactory;
   private enableLines: boolean;
   private lineLength: number;
@@ -14,7 +15,7 @@ export default class ParticleSystem {
     this.context = ctx;
     this.particleNum = 0;
     this.particles = [];
-    this.animationId = "";
+    this.animationId = 0;
     this.particleFactory = new ParticleFactory();
     this.enableLines = true;
     this.lineLength = 100;
@@ -90,7 +91,13 @@ export default class ParticleSystem {
    * @param { float }  start2
    * @param { float }    end2
    */
-  map(value, start1, end1, start2, end2): number {
+  map(
+    value: number,
+    start1: number,
+    end1: number,
+    start2: number,
+    end2: number
+  ): number {
     return start2 + (end2 - start2) * ((value - start1) / (end1 - start1));
   }
 
