@@ -1,7 +1,10 @@
 import BaseParticle from "./BaseParticle";
 import { ParticleType, ParticleName } from "./ParticleType";
+import { IParticleBehavior } from "./IParticleBehavior";
 
-export default class RectParticle extends BaseParticle implements ParticleType {
+export default class RectParticle
+  extends BaseParticle
+  implements ParticleType, IParticleBehavior {
   figure = ParticleName.RECT;
   constructor(context: CanvasRenderingContext2D) {
     super(context);

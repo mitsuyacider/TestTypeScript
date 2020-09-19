@@ -1,10 +1,12 @@
-export default class BaseParticle {
-  public pos: { x: number; y: number };
-  protected speed: { x: number; y: number };
-  protected context: CanvasRenderingContext2D;
-  protected color: string;
-  protected sizeWidth: number;
-  protected sizeHeight: number;
+import { IBaseParticle } from "./IBaseParticle";
+import { IParticleBehavior } from "./IParticleBehavior";
+export default class BaseParticle implements IBaseParticle, IParticleBehavior {
+  pos: { x: number; y: number };
+  speed: { x: number; y: number };
+  context: CanvasRenderingContext2D;
+  color: string;
+  sizeWidth: number;
+  sizeHeight: number;
 
   constructor(_context: CanvasRenderingContext2D, name = "") {
     this.context = _context;

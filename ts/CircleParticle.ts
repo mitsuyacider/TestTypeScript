@@ -1,7 +1,10 @@
 import BaseParticle from "./BaseParticle";
 import { ParticleType, ParticleName } from "./ParticleType";
+import { IParticleBehavior } from "./IParticleBehavior";
 
-export default class CircleParticle extends BaseParticle {
+export default class CircleParticle
+  extends BaseParticle
+  implements IParticleBehavior {
   figure = ParticleName.CIRCLE;
 
   constructor(_context: CanvasRenderingContext2D) {

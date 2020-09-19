@@ -5,8 +5,6 @@ interface IBaseParticle {
   color: string;
   sizeWidth: number;
   sizeHeight: number;
-  draw(): void;
-  update(): void;
 }
 
 export { IBaseParticle };

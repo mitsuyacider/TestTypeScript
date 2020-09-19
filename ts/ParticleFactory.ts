@@ -3,12 +3,8 @@ import CircleParticle from "./CircleParticle";
 import RectParticle from "./RectParticle";
 // import TriangleParticle from "./TriangleParticle";
 import { ParticleName } from "./ParticleType";
-interface Animal {
-  eat(food: string): void;
-  sleep(hours: number): void;
-}
 
-export default class ParticleFactory implements Animal {
+export default class ParticleFactory {
   constructor() {}
 
   createRandomParticle(
@@ -38,13 +34,5 @@ export default class ParticleFactory implements Animal {
     }
 
     return particle;
-  }
-
-  eat(food: string) {
-    console.log("hallo");
-  }
-
-  sleep(hours: number) {
-    console.log("hallo");
   }
 }
