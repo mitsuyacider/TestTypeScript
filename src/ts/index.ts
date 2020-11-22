@@ -1,6 +1,8 @@
 import User from "./User";
 import CircleParticle from "./CircleParticle";
 import ParticleSystem from "./ParticleSystem";
+import "../scss/style.scss";
+
 const user = new User("Mitsuya", "Watanabe", 44);
 let circle: CircleParticle;
 let ctx: CanvasRenderingContext2D | null;
