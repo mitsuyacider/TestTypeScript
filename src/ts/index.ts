@@ -1,7 +1,7 @@
 import User from "./User";
 import CircleParticle from "./CircleParticle";
 import ParticleSystem from "./ParticleSystem";
-import "../scss/style.scss";
+import "../scss/common.scss";
 
 const user = new User("Mitsuya", "Watanabe", 44);
 let circle: CircleParticle;
